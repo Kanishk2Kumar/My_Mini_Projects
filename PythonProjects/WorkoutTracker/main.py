@@ -1,8 +1,12 @@
+import os
 import requests
-import json
+from dotenv import load_dotenv
 
-API_ID = "51fba839"
-API_KEY = "c61ab23acde44449f82f3bf82fbb6196	—"
+# Load environment variables from .env file
+load_dotenv()
+
+API_ID = os.getenv("NUTRITIONIX_API_ID")
+API_KEY = os.getenv("NUTRITIONIX_API_KEY")
 
 end_point_url = "https://trackapi.nutritionix.com/v2/natural/exercise"
 
@@ -11,13 +15,15 @@ headers = {
     "x-app-key": API_KEY,
     "content-type": "application/json"
 }
+
 user_params = {
-                 "query": "ran 3 miles",
-                 "gender": "female",
-                 "weight_kg": 72.5,
-                 "height_cm": 167.64,
-                 "age": 30
-              }
+    "query": "ran 3 miles",
+    "gender": "female",
+    "weight_kg": 72.5,
+    "height_cm": 167.64,
+    "age": 30
+}
+
 response = requests.post(url=end_point_url, json=user_params, headers=headers)
 response.raise_for_status()
 result = response.json()

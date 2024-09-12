@@ -1,13 +1,16 @@
 from datetime import datetime
 import pandas
 import random
+import os
+from dotenv import load_dotenv
 import smtplib
 
 today = datetime.now()
 today_tuple = (today.month, today.day)
 
-MY_EMAIL = "N12345uke@gmail.com"
-Password = "qxlmdheugsgzynyz"
+load_dotenv()
+MY_EMAIL = os.getenv("MY_EMAIL")
+MY_PASSWORD = os.getenv("MY_PASSWORD")
 
 data = pandas.read_csv("birthdays.csv")
 birthday_dict = {(data_row["month"], data_row["day"]):data_row for (index,data_row) in data.iterrows()}

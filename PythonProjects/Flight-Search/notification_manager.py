@@ -1,9 +1,15 @@
 from twilio.rest import Client
+import os
+from dotenv import load_dotenv
 
-TWILIO_SID = "AC6e554281b2d2814bd12f585860df3a79"
-TWILIO_AUTH_TOKEN = "6d1ed50f944f4d2810250c246ca7fe7d"
-TWILIO_VIRTUAL_NUMBER = '+12565791915'
-TWILIO_VERIFIED_NUMBER = '+919359323128'
+# Load environment variables from .env file
+load_dotenv()
+
+# Access environment variables
+TWILIO_SID = os.getenv("TWILIO_SID")
+TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
+TWILIO_VIRTUAL_NUMBER = os.getenv("TWILIO_VIRTUAL_NUMBER")
+TWILIO_VERIFIED_NUMBER = os.getenv("TWILIO_VERIFIED_NUMBER")
 
 
 class NotificationManager:

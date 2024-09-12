@@ -1,12 +1,17 @@
+import os
 import requests
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 GENDER = "MALE"
 WEIGHT_KG = "60"
 HEIGHT = "160.5"
 AGE = "50"
 
-APP_ID = "51fba839"
-API_KEY = "c61ab23acde44449f82f3bf82fbb6196"
+API_ID = os.getenv("NUTRITIONIX_API_ID")
+API_KEY = os.getenv("NUTRITIONIX_API_KEY")
 
 exercise_endpoint = "https://trackapi.nutritionix.com/v2/natural/exercise"
 
