@@ -50,7 +50,7 @@ To get a local copy of this repository and start exploring the projects, follow 
 
 ## Contact
 
-For any questions or inquiries, you can reach me at [your.email@example.com](mailto:your.email@example.com).
+For any questions or inquiries, you can connect with me on [LinkedIn](https://www.linkedin.com/in/kanishk-kumar-95349127b/).
 
 ---
 
